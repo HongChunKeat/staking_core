@@ -43,6 +43,7 @@ export class AdminRewardRecordController {
 
   @Get('')
   @Auth([RoleType.ADMIN])
+  @HttpCode(HttpStatus.OK)
   @ApiPageOkResponse({ type: RewardRecordDto })
   async paginate(
     @Query() filterRewardRecordDto: FilterRewardRecordDto,

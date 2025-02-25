@@ -1,4 +1,4 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, HttpCode, HttpStatus, Query } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 
 import { PageOptionsDto } from '../../common/dto/page-options.dto';
@@ -16,6 +16,7 @@ export class DappUserStakeController {
 
   @Get('')
   @Auth([RoleType.USER])
+  @HttpCode(HttpStatus.OK)
   @ApiPageOkResponse({ type: UserStakeDto })
   async paginate(
     @Query() filterUserStakeDto: FilterUserStakeDto,

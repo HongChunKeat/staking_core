@@ -43,6 +43,7 @@ export class AdminSettingBlockchainController {
 
   @Get('')
   @Auth([RoleType.ADMIN])
+  @HttpCode(HttpStatus.OK)
   @ApiPageOkResponse({ type: SettingBlockchainDto })
   async paginate(
     @Query() filterSettingBlockchainDto: FilterSettingBlockchainDto,

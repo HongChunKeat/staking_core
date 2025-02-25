@@ -46,6 +46,7 @@ export class AdminSettingStakeController {
 
   @Get('')
   @Auth([RoleType.ADMIN])
+  @HttpCode(HttpStatus.OK)
   @ApiPageOkResponse({ type: SettingStakeDto })
   async paginate(
     @Query() filterSettingStakeDto: FilterSettingStakeDto,

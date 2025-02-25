@@ -43,6 +43,7 @@ export class AdminUserController {
 
   @Get('')
   @Auth([RoleType.ADMIN])
+  @HttpCode(HttpStatus.OK)
   @ApiPageOkResponse({ type: UserDto })
   async paginate(
     @Query() filterUserDto: FilterUserDto,
