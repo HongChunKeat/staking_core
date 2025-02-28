@@ -61,6 +61,7 @@ export class DappAuthController {
     // 30 seconds
     await this.redis.setex(key, 30, message);
 
+    // for testing purpose
     const signature = await web3SignMessage(message);
     console.log(`Signature: ${signature}`);
 
